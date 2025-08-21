@@ -1,0 +1,203 @@
+body {
+    background: #121212 !important;
+    color: #e5e7eb;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .rf-grid { display: grid; gap: 1rem; }
+  .rf-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .rf-grid-3 { grid-template-columns: 1.2fr 1fr 1fr; }
+  @media (max-width: 720px) {
+    .rf-grid-2, .rf-grid-3 { grid-template-columns: 1fr; }
+  }
+  
+  .rf-wrap input,
+  .rf-wrap select,
+  .rf-wrap textarea {
+    background-color: #1e1e1e !important;
+    color: #f3f4f6 !important;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    appearance: none;
+    color-scheme: dark;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  }
+  
+  .rf-wrap input:hover,
+  .rf-wrap select:hover,
+  .rf-wrap textarea:hover {
+    background-color: #252525 !important;
+  }
+  
+  .rf-wrap input:focus,
+  .rf-wrap select:focus,
+  .rf-wrap textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+    outline: none;
+  }
+  
+  .rf-wrap {
+    max-width: 880px;
+    margin: 2.5rem auto;
+    padding: 2rem;
+    background: #1c1c1c;
+    border: 1px solid #2f2f33;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    color: #f3f4f6;
+    text-align: left;
+  }
+  
+  .rf-title {
+    color: #ffffff;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .rf-subtitle {
+    color: #d1d5db;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  /* Days grid */
+  .rf-days { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 0.5rem; }
+  .rf-day {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.75rem;
+    background: #1e1e1e;
+    border: 1px solid #2f2f33;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  }
+  .rf-day input[type="checkbox"] {
+    accent-color: #60a5fa;
+    width: 18px;
+    height: 18px;
+    appearance: checkbox;
+  }
+  .rf-day:hover {
+    background: #252525;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+  }
+  .rf-day.is-selected {
+    border-color: #60a5fa;
+    background: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.4);
+  }
+  .rf-day .rf-day-title { font-weight: 700; }
+  .rf-day .rf-day-sub { color: #9ca3af; font-size: 0.9rem; }
+  
+  /* Actions */
+  .rf-actions { display: flex; justify-content: flex-end; margin-top: 1.5rem; }
+  
+  .rf-btn {
+    background-color: #2563eb;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.6rem 1.25rem;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+  }
+  .rf-btn:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    transform: translateY(-1px);
+  }
+  .rf-btn:active { transform: translateY(1px); }
+  
+  /* Fields */
+  .rf-field { display: flex; flex-direction: column; gap: 0.5rem; }
+  .rf-field label { color: #d1d5db; font-size: 0.9rem; }
+  .rf-req { color: #60a5fa; margin-left: 0.25rem; }
+  
+  /* Checkbox row */
+  .rf-checkbox { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.25rem; }
+  .rf-checkbox input[type="checkbox"] { accent-color: #60a5fa; appearance: checkbox; }
+  
+  a:hover .home-text {
+    opacity: 1;
+    color: var(--link-color, #ffffff);
+  }
+
+  /* Back link (strelica ulevo) */
+.rf-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e5e7eb;
+    text-decoration: none;
+    padding: 0.25rem 0.35rem;
+    border-radius: 8px;
+    transition: background-color .2s ease, color .2s ease;
+    position: relative;
+  }
+  .rf-back:hover {
+    background-color: rgba(255,255,255,0.06);
+    color: #fff;
+  }
+  .rf-back-text {
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity .2s ease, transform .2s ease;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+  }
+  .rf-back:hover .rf-back-text {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* sitno pojačanje za invalid obrub (isti ton kao u drugoj formi) */
+  .invalid {
+    border-color: #f87171 !important;
+    box-shadow: 0 0 0 3px rgba(248,113,113,.25) !important;
+  }
+
+  /* price box */
+.rf-price {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: .75rem;
+  padding: .75rem 1rem;
+  background: #1e1e1e;
+  border: 1px solid #2f2f33;
+  border-radius: 12px;
+}
+.rf-price-label { color: #9ca3af; font-size: .85rem; }
+.rf-price-value { font-weight: 700; }
+
+/* confirm modal (već imaš ove klase iz ranije verzije; ostavljam ovde za slučaj da ti fale) */
+.rf-modal-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,.6);
+  display: flex; align-items: center; justify-content: center; z-index: 50;
+}
+.rf-modal-card {
+  background: #1c1c1c; border: 1px solid #2f2f33; border-radius: 16px;
+  padding: 1rem 1.25rem; width: 100%; max-width: 520px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
+}
+.rf-modal-title { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+.rf-modal-body { color: #e5e7eb; white-space: pre-line; }
+.rf-modal-actions { display: flex; gap: .75rem; justify-content: flex-end; margin-top: 1rem; }
+
+/* ghost button */
+.rf-btn-ghost {
+  background: transparent; color: #e5e7eb; border: 1px solid #3f3f46;
+  border-radius: 8px; padding: .6rem 1.25rem; font-weight: 600;
+}
+.rf-btn-ghost:hover { background: #252525; }
+
+/* danger button disabled izgleda sivo */
+.rf-btn-danger:disabled {
+  opacity: .5; cursor: not-allowed;
+}
